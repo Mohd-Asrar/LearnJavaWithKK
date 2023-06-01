@@ -12,6 +12,6 @@ public class SumOfDigits {
             return 0;
         }
 
-        return n%10 + ( sumOfDigits(n/10));
+        return (n%10) + sumOfDigits(n/10);
     }
 }

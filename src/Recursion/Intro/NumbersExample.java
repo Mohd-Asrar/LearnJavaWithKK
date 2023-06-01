@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.Intro;
 
 public class NumbersExample
 {

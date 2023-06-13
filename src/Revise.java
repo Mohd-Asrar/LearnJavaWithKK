@@ -1,8 +1,13 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Revise {
     public static void main(String[] args) {
-        int[]arr = {1,2,5,3,4,7,6,9,8,10,11};
+        int[]arr = {1,2,5,4,-2,10,-3,-99,23,2,1,3,1};
+//        quicksorttt(arr, 0, arr.length-1);
+        mergee(arr,0,arr.length);
+        System.out.println(Arrays.toString(arr));
+
 
 //        bubble(arr);
 //        selection(arr);
@@ -10,9 +15,7 @@ public class Revise {
 //        cyclicSort(arr);
 //        System.out.println(Arrays.toString(arr));
 
-        decToBin(51);
-
-
+//        decToBin(51);
 
     }
 
@@ -98,6 +101,87 @@ public class Revise {
         }
     }
 
+    public static void quicksorttt(int[] arr,int s, int e){
+        if(s > e){
+            return;
+        }
 
+        int low = s;
+        int high = e;
+        int mid = s+(e-s)/2;
+        int pivot = arr[mid];
+
+        while(low <= high){
+            while(arr[low]<pivot){
+                low++;
+            }
+
+            while (arr[high] > pivot){
+                high--;
+            }
+
+            if(low<= high){
+                int temp = arr[low];
+                arr[low] = arr[high];
+                arr[high]= temp;
+                low++;
+                high--;
+            }
+        }
+        quicksorttt(arr, s, high);
+        quicksorttt(arr, low, e);
+
+    }
+
+    public static void mergee(int[] arr, int s, int e){
+        if(e - s==1){
+            return;
+        }
+
+        int mid = s + (e - s)/2;
+
+        mergee(arr, s, mid);
+        mergee(arr, mid, e);
+
+        merging(arr, s, mid, e);
+
+    }
+
+    public static void merging(int[] arr, int s, int mid, int e){
+        int [] mix = new int[e-s];
+
+        int i=s;
+        int j = mid;
+        int k=0;
+
+        while (i < mid && j < e){
+            if(arr[i] < arr[j]){
+                mix[k] = arr[i];
+                i++;
+            }else{
+                mix[k] = arr[j];
+                j++;
+            }
+
+            k++;
+        }
+
+        while (i< mid){
+            mix[k] = arr[i];
+            i++;
+            k++;
+        }
+
+        while (j< e){
+            mix[k] = arr[j];
+            j++;
+            k++;
+        }
+
+        for (int l = 0; l < mix.length; l++) {
+            arr[s+l] = mix[l];
+
+        }
+    }
 
 }

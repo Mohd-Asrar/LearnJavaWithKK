@@ -7,6 +7,24 @@ public class Doubts {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+
+        String str ="";
+//        int count=0;
+
+//        for (int i = 0; i < str.length(); i++) {
+//            for (int j = i; j < str.length(); j++) {
+//                StringBuilder ans = new StringBuilder();
+//                for (int k = i; k <= j; k++) {
+//                    ans.append(str.charAt(k));
+//                }
+//                if(isPalindrome(ans)){
+//                    count++;
+//                }
+//
+//            }
+//        }
+
+        System.out.println(str.length());
 //        int[] arr = {1,2,3,4,5,7,9,10,14,17,19,33};
 //        int target = 35;
 //        System.out.println(cieliengOfANumber(arr, target));
@@ -70,23 +88,7 @@ public class Doubts {
         z
          */
 //
-        String str ="aabaa";
-        int count=0;
 
-        for (int i = 0; i < str.length(); i++) {
-            for (int j = i; j < str.length(); j++) {
-                StringBuilder ans = new StringBuilder();
-                for (int k = i; k <= j; k++) {
-                  ans.append(str.charAt(k));
-                }
-                if(isPalindrome(ans)){
-                    count++;
-                }
-
-            }
-        }
-
-        System.out.println(count);
 
     }
 
